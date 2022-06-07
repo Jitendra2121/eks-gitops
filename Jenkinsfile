@@ -18,8 +18,7 @@ pipeline {
              checkout scm
         }
 
-        stage(Update GIT repo for GitOps) {
-             git branch: 'main', url: 'https://github.com/Jitendra2121/eks-gitops.git'
+        stage(Update GIT for GitOps) {
              script {
                 catchError(buildResult: 'Success', stageResult: 'Failure') {
                     withCredentials([usernamePassword(credentialsId: 'Github', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {              
