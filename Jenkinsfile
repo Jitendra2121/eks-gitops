@@ -14,13 +14,15 @@ pipeline {
             }
         }
 
-#        stage('Clone SCM') {
-#            steps {
-#                script{
-#                    checkout scm
-#                }
-#            }
-#        }
+/*
+        stage('Clone SCM') {
+            steps {
+                script{
+                    checkout scm
+                }
+            }
+        }
+*/
 
         stage('Update GIT Repo for GitOps') {
             steps {
