@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: python
-        image: jeetdocker21/test:python-latest
+        image: jeetdocker21/test:${BUILD_NUMBER_X}
         ports:
         - containerPort: 5000
