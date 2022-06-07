@@ -32,7 +32,7 @@ pipeline {
                 sh 'sudo git config --global user.name "Jitendra2121"'
                 sh 'sudo git config --global user.email atkj2102@gmail.com'
                 sh 'sudo cat /home/ubuntu/final/eks-gitops/deployment.yaml'
-                sh "sudo sed -i 's+jeetdocker21/test.*+jeetdocker21/test:${BUILD_NUMBER_X}+g' sudo cat /home/ubuntu/final/eks-gitops/deployment.yaml"
+                sh "sudo sed -i 's+jeetdocker21/test.*+jeetdocker21/test:${BUILD_NUMBER_X}+g' /home/ubuntu/final/eks-gitops/deployment.yaml"
                 sh 'sudo cat /home/ubuntu/final/eks-gitops/deployment.yaml'
                 sh 'sudo git add .'
                 sh 'sudo git commit -m "Changed the Deployment file container image version to: ${BUILD_NUMBER_X}"'
