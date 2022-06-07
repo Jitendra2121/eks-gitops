@@ -14,12 +14,17 @@ pipeline {
             }
         }
 
-        stage('Clone SCM') {          
-             checkout scm
+        stage('Clone SCM') {
+            steps {
+                script{
+                    checkout scm
+                }
+            }
         }
 
         stage('Update GIT Repo for GitOps') {
-             script {
+            steps {
+              script {
                 catchError(buildResult: 'Success', stageResult: 'Failure') {
                     withCredentials([usernamePassword(credentialsId: 'Github', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {              
                 sh 'sudo git config --global user.name "Jitendra2121"'
