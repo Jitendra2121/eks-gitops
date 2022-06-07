@@ -36,7 +36,8 @@ pipeline {
                 sh 'sudo cat ./deployment.yaml'
                 sh 'sudo git add .'
                 sh 'sudo git commit -m "Changed the Deployment file container image version to: ${BUILD_NUMBER_X}"'
-                sh 'sudo git push https://${GIT_USERNAME}:{GIT_PASSWORD}@github.com/${GIT_USERNAME}/eks-gitops.git HEAD:main'
+                sh 'sudo git push https://${GIT_PASSWORD}@github.com/${GIT_USERNAME}/eks-gitops.git HEAD:main'
+                /*sh 'sudo git push https://${GIT_USERNAME}:{GIT_PASSWORD}@github.com/${GIT_USERNAME}/eks-gitops.git HEAD:main'*/
 
                 echo 'Build Number: ' + env.BUILD_NUMBER_X
                 echo "Succefully build the version ${BUILD_NUMBER_X} of the python flask app using GitOps."
