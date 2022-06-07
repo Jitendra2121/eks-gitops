@@ -18,7 +18,7 @@ pipeline {
              checkout scm
         }
 
-        stage(Update GIT for GitOps) {
+        stage('Update GIT Repo for GitOps') {
              script {
                 catchError(buildResult: 'Success', stageResult: 'Failure') {
                     withCredentials([usernamePassword(credentialsId: 'Github', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {              
