@@ -33,6 +33,7 @@ pipeline {
 
                 echo 'Build Number: ' + env.BUILD_NUMBER_X
                 echo "Succefully build the version ${BUILD_NUMBER_X} of the python flask app using GitOps."
+                    }
                 }
             }
         }
